@@ -71,11 +71,14 @@ namespace LOCK
         }
         private void button2_Click(object sender, EventArgs e)
         {
+
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             listBox3.Items.Clear();
             String getmulu;
             getmulu = textBox1.Text;
+            if(textBox1.Text == "") MessageBox.Show("错误78：请输入目录！");
+            else {
             DirectoryInfo theFolder = new DirectoryInfo(@getmulu);
             DirectoryInfo[] dirInfo = theFolder.GetDirectories();
 
@@ -121,6 +124,7 @@ namespace LOCK
                 button1.Enabled = true;
                 button3.Enabled = true;
 
+            }
             }
         }
         private void Form1_Load(object sender, EventArgs e)
