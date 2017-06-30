@@ -1,0 +1,9 @@
+E:\GitHub\lock\LOCK\LOCK\bin\Debug\LOCK.exe.config
+E:\GitHub\lock\LOCK\LOCK\bin\Debug\LOCK.exe
+E:\GitHub\lock\LOCK\LOCK\bin\Debug\LOCK.pdb
+E:\GitHub\lock\LOCK\LOCK\obj\Debug\LOCK.csprojResolveAssemblyReference.cache
+E:\GitHub\lock\LOCK\LOCK\obj\Debug\LOCK.Form1.resources
+E:\GitHub\lock\LOCK\LOCK\obj\Debug\LOCK.Properties.Resources.resources
+E:\GitHub\lock\LOCK\LOCK\obj\Debug\LOCK.csproj.GenerateResource.Cache
+E:\GitHub\lock\LOCK\LOCK\obj\Debug\LOCK.exe
+E:\GitHub\lock\LOCK\LOCK\obj\Debug\LOCK.pdb
