@@ -199,6 +199,16 @@ namespace LOCK
             }
         }
 
+        private void 关闭ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void 关于文件锁ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("联系我，QQ 308346293");
+        }
+
 
         ///////
     }
