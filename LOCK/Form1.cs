@@ -89,10 +89,12 @@ namespace LOCK
                 this.listBox2.Items.Add(NextFile.Name);
 
                 //限定遍历的文件类型
-                if (NextFile.Name.Substring(NextFile.Name.Length - 3) == "txt" || 
-                            NextFile.Name.Substring(NextFile.Name.Length - 3) == "doc" ||
-                            NextFile.Name.Substring(NextFile.Name.Length - 4) == "docx")
-                    this.listBox3.Items.Add(@getmulu + "/" + NextFile.Name);
+                if (NextFile.Name.Substring(NextFile.Name.Length - 3) == "txt"
+
+                            //  || NextFile.Name.Substring(NextFile.Name.Length - 3) == "doc" ||
+                            // NextFile.Name.Substring(NextFile.Name.Length - 4) == "docx"
+                            )
+                        this.listBox3.Items.Add(@getmulu + "/" + NextFile.Name);
             }
 
 
@@ -109,9 +111,9 @@ namespace LOCK
                         this.listBox2.Items.Add(NextFile.Name);
 
                         //限定遍历的文件类型
-                       if( NextFile.Name.Substring( NextFile.Name.Length - 3)=="txt"|| 
-                            NextFile.Name.Substring(NextFile.Name.Length - 3) == "doc" ||
-                            NextFile.Name.Substring(NextFile.Name.Length - 4) == "docx"
+                       if( NextFile.Name.Substring( NextFile.Name.Length - 3)=="txt"
+                               // || NextFile.Name.Substring(NextFile.Name.Length - 3) == "doc" ||
+                            //NextFile.Name.Substring(NextFile.Name.Length - 4) == "docx"
                             )
                         this.listBox3.Items.Add(@getmulu + "/" + NextFolder.Name + "/" + NextFile.Name);
                     }
