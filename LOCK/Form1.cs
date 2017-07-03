@@ -39,12 +39,13 @@ namespace LOCK
                     {
                         strLine = sr.ReadLine();
                       
-                        fileContent +=strLine   + " \r\n";
+                        fileContent +=strLine   ;
                     }
                     // fileContent = AesEncrypt(fileContent,"abc");
                     // richTextBox1.Text = fileContent;
                     fileContent=Encrypt(fileContent,getpass);
-                }
+                        if(fileContent=="2") { MessageBox.Show("加密文件失败。自动停止所有加密。请检查你的密码格式"); break; }
+                    }
                 //删除原文件
                 if (File.Exists(@listBox3.Items[i].ToString()))
                 {
@@ -54,7 +55,7 @@ namespace LOCK
                 //写文件
                 File.WriteAllText(@listBox3.Items[i].ToString()+".knclock", fileContent);
 
-                    i++;
+                  
                richTextBox1.Text += "已SD"+ i + "个文件 \n";
             
                 //
@@ -93,13 +94,17 @@ namespace LOCK
             { //遍历文件
                 this.listBox2.Items.Add(NextFile.Name);
 
-                //限定遍历的文件类型
-                if (NextFile.Name.Substring(NextFile.Name.Length - 3) == "txt"
+                    //限定遍历的文件类型
+                    try
+                    {
+                        if (NextFile.Name.Substring(NextFile.Name.Length - 3) == "txt"
 
                              || NextFile.Name.Substring(NextFile.Name.Length - 7) == "knclock"
                             //  || NextFile.Name.Substring(NextFile.Name.Length - 4) == "docx"
                             )
-                        this.listBox3.Items.Add(@getmulu + "/" + NextFile.Name);
+                            this.listBox3.Items.Add(@getmulu + "/" + NextFile.Name);
+                    }
+                    catch { }
             }
 
 
@@ -141,21 +146,28 @@ namespace LOCK
 
         public static string Encrypt(string toEncrypt,string getpass)
         {
-            
-           
 
-            byte[] keyArray = UTF8Encoding.UTF8.GetBytes("a23456789012345678901234"+ getpass);
-            byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
 
-            RijndaelManaged rDel = new RijndaelManaged();
-            rDel.Key = keyArray;
-            rDel.Mode = CipherMode.ECB;
-            rDel.Padding = PaddingMode.PKCS7;
+            try
+            {
+                byte[] keyArray = UTF8Encoding.UTF8.GetBytes("a23456789012345678901234" + getpass);
+                byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
 
-            ICryptoTransform cTransform = rDel.CreateEncryptor();
-            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+                RijndaelManaged rDel = new RijndaelManaged();
+                rDel.Key = keyArray;
+                rDel.Mode = CipherMode.ECB;
+                rDel.Padding = PaddingMode.PKCS7;
 
-            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+                ICryptoTransform cTransform = rDel.CreateEncryptor();
+                byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+
+                return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+            }
+            catch
+            {
+
+                return "2";
+            }
         }
         public static string Decrypt(string toDecrypt, string getpass)
         {
@@ -204,7 +216,7 @@ namespace LOCK
                         {
                             strLine = sr.ReadLine();
 
-                            fileContent += strLine + " \r\n";
+                            fileContent += strLine ;
                         }
                         // fileContent = AesEncrypt(fileContent,"abc");
                         // richTextBox1.Text = fileContent;
@@ -220,12 +232,14 @@ namespace LOCK
                     //写文件
                     File.WriteAllText(JS_Mulu_1+".txt", fileContent);
 
-                    i++;
+                   
                     richTextBox1.Text += "已解除" + i + "个文件 \n";
 
                     //
                 }
             }
+            //重新遍历目录一次
+            button2.PerformClick();
         }
 
         private void 关闭ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -235,7 +249,7 @@ namespace LOCK
 
         private void 关于文件锁ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("本锁目前为免费版。\n功能是只能锁TXT文件.\n更多详细信息：http://www.52pojie.cn/thread-621157-1-1.html");
+            MessageBox.Show("文件锁V1.1\n本锁目前为免费版。\n功能是只能锁TXT文件.\n更多详细信息：http://www.52pojie.cn/thread-621157-1-1.html");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

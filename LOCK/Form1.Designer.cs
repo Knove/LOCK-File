@@ -212,8 +212,8 @@
             // 关于文件锁ToolStripMenuItem
             // 
             this.关于文件锁ToolStripMenuItem.Name = "关于文件锁ToolStripMenuItem";
-            this.关于文件锁ToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
-            this.关于文件锁ToolStripMenuItem.Text = "关于-文件锁";
+            this.关于文件锁ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.关于文件锁ToolStripMenuItem.Text = "关于";
             this.关于文件锁ToolStripMenuItem.Click += new System.EventHandler(this.关于文件锁ToolStripMenuItem_Click);
             // 
             // label6
