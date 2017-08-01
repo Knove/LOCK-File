@@ -212,7 +212,7 @@
             // 关于文件锁ToolStripMenuItem
             // 
             this.关于文件锁ToolStripMenuItem.Name = "关于文件锁ToolStripMenuItem";
-            this.关于文件锁ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.关于文件锁ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.关于文件锁ToolStripMenuItem.Text = "关于";
             this.关于文件锁ToolStripMenuItem.Click += new System.EventHandler(this.关于文件锁ToolStripMenuItem_Click);
             // 
@@ -256,7 +256,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "文件锁";
+            this.Text = "灰灰文件锁";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
