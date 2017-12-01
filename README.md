@@ -10,7 +10,7 @@
 点击锁文件，所有txt文件锁为knclock格式，AES加密
 ![image](https://github.com/KnoveZ/LOCK-File/blob/master/img/2.png)
 # text 1.2
-txt模式打开文件，都是ARE加密码
+txt模式打开文件，都是AES加密码
 ![image](https://github.com/KnoveZ/LOCK-File/blob/master/img/3.png)
 # text 1.3
 单击解密可以解密。
