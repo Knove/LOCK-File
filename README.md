@@ -7,7 +7,7 @@
 ![image](https://github.com/KnoveZ/LOCK-File/blob/master/img/1.png)
 
 # text 1.1
-点击锁文件，所有txt文件锁为knclock格式，ARE加密
+点击锁文件，所有txt文件锁为knclock格式，AES加密
 ![image](https://github.com/KnoveZ/LOCK-File/blob/master/img/2.png)
 # text 1.2
 txt模式打开文件，都是ARE加密码
